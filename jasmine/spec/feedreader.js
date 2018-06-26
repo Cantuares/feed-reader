@@ -86,10 +86,14 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 		it('state change when clicked', function() {
-			menuIcon.click();
-			expect(bodyEL.hasClass('menu-hidden')).toBe(false);
-			menuIcon.click();
-			expect(bodyEL.hasClass('menu-hidden')).toBe(true);
+			if (bodyEL.hasClass('menu-hidden')) {
+				menuIcon.click();
+				expect(bodyEL.hasClass('menu-hidden')).toBe(false);
+			}
+			if (!bodyEL.hasClass('menu-hidden')) {
+				menuIcon.click();
+				expect(bodyEL.hasClass('menu-hidden')).toBe(true);
+			}
 		});
 	});
 
@@ -110,7 +114,8 @@ $(function() {
 		});
 		
 		it('has one entry', function() {
-			expect($('.feed a').length).not.toBe(0);
+			// feed has content?
+			expect($('.feed').length).not.toBe(0);
 		});
 	});
 	
@@ -139,7 +144,7 @@ $(function() {
 		}
 		
 		it('has two different feeds', function() {
-			expect(feedUdacityBlog == feedCssTrick).toBe(false);
+			expect(feedUdacityBlog).not.toBe(feedCssTrick);
 		});
 	});
 }());

@@ -16,6 +16,8 @@ The following tests were implemented for the perfect functioning of the feed rea
 $ git clone https://github.com/Cantuares/feed-reader.git
 $ cd feed-reader
 ```
+
+# How to use
 Drag the index.html file from the feed-reader folder to your preferred browser and see the tests in action.
 
 If you prefer, check out the [feed reader in action](https://cantuares.github.io/feed-reader/).
